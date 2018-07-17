@@ -1,14 +1,9 @@
+var http = require('http');
+// In general, you need to specify a call-back function with most of the Node modules methods
+http.createServer(function (request, response) {
+    response.writeHead(200); //Status code in header
+    response.write("Introduction"); //Response body
+    response.end(); //Close the connection
+}).listen(8080); //Port in which node will listen for connections
 
-var http = require('http'); //add the http module
-
-//Create a server
-var myServer = http.createServer(function (request, response) {
-  // Return something from server
-  response.writeHead(200, {"Content-Type": "text/plain"});
-  response.end("Hello Node\n");
-}); //create a server
-
-Bind server to a port
-myServer.listen(3000);
-
-console.log("Go to localhost:3000 on your browser");
+console.log('Listening on port 8080...');
